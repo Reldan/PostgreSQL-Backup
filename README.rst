@@ -1,10 +1,14 @@
 PostgreSQL continues backup
 ==============================================
 
-archive - directory for WAL
-src  - code directory
-src/run.py - runner
-src/settings.py - settings for user, password, host and database name
+Project structure
+----------------------------------------------
+::
+
+    archive - directory for WAL
+    src  - code directory
+    src/run.py - runner
+    src/settings.py - settings for user, password, host and database name
 
 Setup postgresql.conf
 -----------------------------------------------
@@ -12,7 +16,7 @@ Setup postgresql.conf
 
     wal_level = hot_standby
     archive_mode = on
-    archive_command = 'cp -i %p /Developer/myprogs/python/tutorials/test-psycopg2/archive/%f </dev/null'
+    archive_command = 'cp -i %p /Developer/myprogs/python/tutorials/PostgreSQL-Backup/archive/%f </dev/null'
 
 Import test database
 -----------------------------------------------
@@ -25,3 +29,15 @@ Restart postgresql
 ::
 
     pg_ctl -D /usr/local/var/postgres/ -l logfile restart
+
+Install psycopg2
+-----------------------------------------------
+::
+
+    pip install psycopg2
+
+Run src/run.py
+-----------------------------------------------
+::
+
+    python ./src/run.py

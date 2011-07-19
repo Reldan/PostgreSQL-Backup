@@ -62,7 +62,7 @@ def main():
     #print get_columns(conn, 'products')
     #print_rows(get_rows(conn, 'products', 20))
     print "##LOADING##"
-    load(conn, 20000)
+    load(conn, 2000000)
     print "##LOADED##"
     print "##COMMITING##"
     conn.commit()

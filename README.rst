@@ -41,3 +41,6 @@ Run src/run.py
 ::
 
     python ./src/run.py
+
+
+Also you should backup yours configuration files.

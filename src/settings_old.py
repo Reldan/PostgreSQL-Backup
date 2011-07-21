@@ -1,4 +1,4 @@
 dbname='mydb'
-user='postgres'
+user='eldarnugaev'
 host='localhost'
 password=''

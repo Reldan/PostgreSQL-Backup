@@ -3,8 +3,12 @@ from datetime import datetime
 
 def connect():
     from settings import dbname, user, host, password
-    conn_template = "dbname='%s' user='%s' host='%s' password='%s'"
-    conn_str = conn_template % (dbname, user, host, password)
+    if password:
+        conn_template = "dbname='%s' user='%s' host='%s' password='%s'"
+        conn_str = conn_template % (dbname, user, host, password)
+    else:
+        conn_template = "dbname='%s' user='%s' host='%s'"
+        conn_str = conn_template % (dbname, user, host)
     return psycopg2.connect(conn_str)
 
 def execute(conn, query):
